@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 import { CATEGORIES, DEFAULT_SELECT_VALUE } from './constants'
 
 export const CategoryFilter = () => {
-  const [selectedValue, setSelectedValue] = useState<any>(DEFAULT_SELECT_VALUE)
+  const [selectedValue, setSelectedValue] = useState<number | undefined>(DEFAULT_SELECT_VALUE)
 
   const { category, searchValue } = useSearchQuery()
 
