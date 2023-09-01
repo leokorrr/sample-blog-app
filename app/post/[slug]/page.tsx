@@ -1,11 +1,9 @@
 import { Categories } from '@/components/Categories'
 import { IPostCard, IPostPageProps } from '@/types/types'
-import { headers } from 'next/headers'
 import Image from 'next/image'
 
 async function getPost(slug: string) {
   const res = await fetch(`${process.env.API_URL}/posts/${slug}`, {
-    headers: headers(),
     cache: 'no-cache'
   })
 

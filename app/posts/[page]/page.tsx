@@ -3,14 +3,12 @@ import { PostCardList } from '@/components/PostCardList'
 import { SearchFilterToolbar } from '@/components/SearchFilterToolbar'
 import { IPostsPageProps } from '@/types/types'
 import { TAKE } from '@/utils/constants'
-import { headers } from 'next/headers'
 import { redirect } from 'next/navigation'
 
 async function getPosts(page: number, searchValue: string, category: string | null) {
   const res = await fetch(
     `${process.env.API_URL}/posts/page/${page}?searchValue=${searchValue}&category=${category}`,
     {
-      headers: headers(),
       cache: 'no-cache'
     }
   )
